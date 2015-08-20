@@ -1,0 +1,8 @@
+Opera/9.30 (Nintendo Wii; U; ; 2047-7; en)
+wii libnup/1.0
+Java/1.6.0_13
+libwww-perl/5.820
+Peach/1.01 (Ubuntu 8.04 LTS; U; en)
+Python-urllib/2.5
+HTMLParser/1.6
+Jigsaw/2.2.5 W3C_CSS_Validator_JFouffa/2.0
