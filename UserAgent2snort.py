@@ -54,7 +54,7 @@ with open(args.outfile, 'w') as fout:
         for line in f:
             useragent = line.rstrip()
             ruleua = useragent.replace('(', '|28|').replace(')', '|29|').replace(';', '|3B|')
-            rule = ("alert tcp $HOME_NET any -> $EXTERNAL_NET $HTTP_PORTS (msg:\"BLACKLIST USER-AGENT known malicious user-agent %s\"; flow:to_server,established; content:\"%s\"; http_header; metadata: service http; sid:%s; rev:1;)\n" % (useragent, ruleua, args.sid))
+            rule = ("alert tcp $HOME_NET any -> $EXTERNAL_NET $HTTP_PORTS (msg:\"BLACKLIST USER-AGENT known malicious user-agent %s\"; flow:to_server,established; content:\"%s\"; http_header; metadata: service http; sid:%s; rev:1;)\n" % (useragent.replace('(', '').replace(')', '').replace(';', ''), ruleua, args.sid))
             print rule
             fout.write(rule)
             args.sid += 1
